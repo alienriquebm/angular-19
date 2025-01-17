@@ -1,0 +1,43 @@
+<div [ngClass]="[currentColor.bg, 'rounded-md p-4']">
+  <div class="flex w-full justify-between items-center p-4">
+    <div class="flex items-center gap-4">
+      <div
+        [ngClass]="[
+          currentColor.text,
+          'bg-white w-6 h-6 rounded-full flex items-center justify-center font-openSans font-bold'
+        ]"
+      >
+        {{ taskQuantity }}
+      </div>
+      <span
+        [ngClass]="[
+          currentColor.text,
+          'font-openSans text-violet-800 font-bold'
+        ]"
+        >{{ title }}</span
+      >
+    </div>
+    <div class="flex gap-4 items-center">
+      <mat-icon [ngClass]="[currentColor.text]">add</mat-icon>
+      <mat-icon [ngClass]="[currentColor.text]">more_horiz</mat-icon>
+    </div>
+  </div>
+  @for (task of tasks; track $index) {
+  <app-task-card [task]="task" />
+  }
+  <div class="w-full mt-4">
+    <button
+      type="button"
+      [ngClass]="[
+        currentColor.text,
+        currentColor.bgButton,
+        currentColor.border,
+        currentColor.hoverBg,
+        currentColor.focusRingButton,
+        'flex justify-center items-center gap-2 w-full font-openSans font-bold focus:ring-4  rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none border-2 border-dashed hover:text-white'
+      ]"
+    >
+      <mat-icon [ngClass]="[currentColor.text]">add</mat-icon> Add new task
+    </button>
+  </div>
+</div>
