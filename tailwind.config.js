@@ -21,9 +21,6 @@ module.exports = {
             borderColor: theme("colors.violet-800"),
             color: theme("colors.white"),
           },
-          "&focus": {
-            ring,
-          },
         },
       };
       addUtilities(newUtilities);
