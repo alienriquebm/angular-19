@@ -1,1 +1,63 @@
-<p>dashboard works!</p>
+<div class="w-full min-h-full p-12">
+  <h1 class="text-3xl font-bold">Angular Todo App by Ali</h1>
+  <section class="w-full mt-6 h-[calc(100vh-156px)] bg-slate-50 rounded-md">
+    <div class="w-full grid grid-cols-4 gap-4 p-4">
+      <!-- Design column -->
+      <div class="bg-violet-200 rounded-md p-4">
+        <div class="flex w-full justify-between items-center p-4">
+          <div class="flex items-center gap-4">
+            <div
+              class="bg-white w-6 h-6 rounded-full flex items-center justify-center font-openSans font-bold text-violet-800"
+            >
+              3
+            </div>
+            <span class="font-openSans text-violet-800 font-bold">Design</span>
+          </div>
+          <div class="flex gap-4 items-center">
+            <mat-icon class="text-violet-800">add</mat-icon>
+            <mat-icon class="text-violet-800">more_horiz</mat-icon>
+          </div>
+        </div>
+        <div class="bg-white rounded-md w-full p-4 font-openSans">
+          <span class="font-bold"
+            >Create a preview for the last article from our blog</span
+          >
+          <div class="flex justify-between w-full mt-4">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 relative rounded-full overflow-hidden">
+                <img ngSrc="https://placehold.co/300x300" fill />
+              </div>
+              <span class="text-sm font-light">Tomorrow 16:00</span>
+            </div>
+            <mat-icon class="text-slate-400">check_circle_outline</mat-icon>
+          </div>
+          <div class="mt-5 w-full flex justify-between items-center">
+            <div class="flex gap-4 items-center justify-center text-sm">
+              <div class="flex items-center">
+                <mat-icon class="text-base">comment</mat-icon>
+                <span>8</span>
+              </div>
+              <div class="flex items-center">
+                <mat-icon class="text-base">attach_file</mat-icon>
+                <span>1</span>
+              </div>
+            </div>
+            <div class="py-1 px-5 text-red-400 bg-red-100 font-bold rounded-md">
+              High
+            </div>
+          </div>
+        </div>
+        <div class="w-full mt-4">
+          <button
+            type="button"
+            class="flex justify-center items-center gap-2 w-full font-openSans font-bold text-violet-800 bg-violet-100 hover:bg-violet-800 focus:ring-4 focus:ring-violet-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none border-2 border-dashed border-violet-800"
+          >
+            <mat-icon class="text-violet-800">add</mat-icon> Add new task
+          </button>
+        </div>
+      </div>
+
+      <!-- Font-end column -->
+    </div>
+  </section>
+</div>
