@@ -1,6 +1,6 @@
 <div class="bg-white rounded-md w-full p-4 font-openSans">
   <span class="font-bold">{{ task.description }}</span>
-  <div class="flex justify-between w-full mt-4">
+  <div class="flex justify-between w-full mt-4 items-center">
     <div class="flex items-center gap-2">
       <div class="w-8 h-8 relative rounded-full overflow-hidden">
         <img ngSrc="https://placehold.co/300x300" fill />
@@ -13,12 +13,18 @@
   </div>
   <div class="mt-5 w-full flex justify-between items-center">
     <div class="flex gap-4 items-center justify-center text-sm">
-      <div class="flex items-center">
-        <mat-icon class="text-base"><mat-icon> comment</mat-icon> </mat-icon>
+      <div class="flex items-center gap-1">
+        <mat-icon
+          class="text-base !w-auto !h-auto !flex justify-center items-center"
+          ><mat-icon> comment</mat-icon>
+        </mat-icon>
         <span>{{ task.taskComments.length }}</span>
       </div>
-      <div class="flex items-center">
-        <mat-icon class="text-base">attach_file</mat-icon>
+      <div class="flex items-center gap-1">
+        <mat-icon
+          class="text-base !w-auto !h-auto !flex justify-center items-center"
+          >attach_file</mat-icon
+        >
         <span>{{ task.taskAttachmentsQuantity }}</span>
       </div>
     </div>

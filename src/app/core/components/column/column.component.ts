@@ -3,24 +3,26 @@ import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Task } from '../../types/task/task';
 import { TaskCardComponent } from '../task-card/task-card.component';
+import { ButtonComponent } from '../button/button.component';
+import { Colors } from '../../types/colors/colors.enum';
 
 @Component({
   selector: 'app-column',
   templateUrl: './column.component.html',
-  imports: [MatIconModule, NgClass, TaskCardComponent],
+  imports: [MatIconModule, NgClass, TaskCardComponent, ButtonComponent],
 })
 export class ColumnComponent {
   constructor() {
     this.title = '';
     this.taskQuantity = 0;
     this.tasks = [];
-    this.taskCategoryColor = '';
+    this.taskCategoryColor = Colors.violet;
   }
 
   @Input() title: string;
   @Input() taskQuantity: number;
   @Input() tasks: Task[];
-  @Input() taskCategoryColor: string;
+  @Input() taskCategoryColor: Colors;
 
   colorMap = {
     violet: {
@@ -63,4 +65,9 @@ export class ColumnComponent {
       this.colorMap['violet']
     );
   }
+
+  onClickAdd() {
+    console.log('Add button clicked');
+  }
+
 }

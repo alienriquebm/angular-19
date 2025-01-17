@@ -2,16 +2,17 @@ import { Injectable } from '@angular/core';
 import { Task } from '../types/task/task';
 import { TaskPriority } from '../types/task/task-priority.enum';
 import { TaskCategory, TaskCategoryName } from '../types/task/task-category';
+import { Colors } from '../types/colors/colors.enum';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
   private taskCategories: TaskCategory[] = [
-    { name: TaskCategoryName.Design, color: 'violet' },
-    { name: TaskCategoryName.Frontend, color: 'sky' },
-    { name: TaskCategoryName.Backend, color: 'yellow' },
-    { name: TaskCategoryName.Testing, color: 'red' },
+    { name: TaskCategoryName.Design, color: Colors.violet },
+    { name: TaskCategoryName.Frontend, color: Colors.sky },
+    { name: TaskCategoryName.Backend, color: Colors.yellow },
+    { name: TaskCategoryName.Testing, color: Colors.red },
   ];
 
   private tasks: Task[] = [
@@ -39,6 +40,28 @@ export class TaskService {
       isCompleted: false,
       taskCategory: TaskCategoryName.Backend,
     },
+    {
+      id: 3,
+      title: 'Develop API for user authentication',
+      description: 'Implement authentication using JWT',
+      priority: TaskPriority.Medium,
+      taskComments: [],
+      taskAttachmentsQuantity: 0,
+      date: new Date('2023-12-05'),
+      isCompleted: false,
+      taskCategory: TaskCategoryName.Frontend,
+    },
+    {
+      id: 4,
+      title: 'Develop API for user authentication',
+      description: 'Implement authentication using JWT',
+      priority: TaskPriority.Medium,
+      taskComments: [],
+      taskAttachmentsQuantity: 0,
+      date: new Date('2023-12-05'),
+      isCompleted: false,
+      taskCategory: TaskCategoryName.Testing,
+    },
   ];
 
   constructor() {}
@@ -49,7 +72,7 @@ export class TaskService {
   getTasksGrouped(): {
     category: TaskCategoryName;
     tasks: Task[];
-    categoryColor: string;
+    categoryColor: Colors;
   }[] {
     const categoryValues = Object.values(
       TaskCategoryName
@@ -58,10 +81,11 @@ export class TaskService {
       return {
         category,
         tasks: this.tasks.filter((task) => task.taskCategory === category),
-        categoryColor:
-          this.taskCategories.find(
+        categoryColor: Colors[
+         ( this.taskCategories.find(
             (taskCategory) => taskCategory.name === category
-          )?.color || 'gray',
+          )?.color || 'gray') as keyof typeof Colors
+        ],
       };
     });
     return groupedTasks;

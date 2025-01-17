@@ -8,6 +8,7 @@ import {
   TaskCategoryName,
 } from '../core/types/task/task-category';
 import { NgFor } from '@angular/common';
+import { Colors } from '../core/types/colors/colors.enum';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,6 +25,6 @@ export class DashboardComponent {
   groupedTasks: {
     category: TaskCategoryName;
     tasks: Task[];
-    categoryColor: string;
+    categoryColor: Colors;
   }[] = [];
 }

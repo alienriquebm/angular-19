@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { TaskPriority } from '../../types/task/task-priority.enum';
 import { NgClass } from '@angular/common';
+import { PriorityLabelPipe } from '../../pipes/priority-label.pipe';
 
 @Component({
   selector: 'app-task-priority',
   templateUrl: './task-priority.component.html',
-  imports: [NgClass],
+  imports: [NgClass, PriorityLabelPipe],
 })
 export class TaskPriorityComponent {
   constructor() {
