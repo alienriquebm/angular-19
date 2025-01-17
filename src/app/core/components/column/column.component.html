@@ -1,4 +1,4 @@
-<div [ngClass]="[currentColor.bg, 'rounded-md p-4']">
+<div [ngClass]="[currentColor.bg, 'rounded-md p-4 w-80']">
   <div class="flex w-full justify-between items-center p-4">
     <div class="flex items-center gap-4">
       <div
@@ -18,9 +18,12 @@
       <mat-icon [ngClass]="[currentColor.text]">more_horiz</mat-icon>
     </div>
   </div>
-  @for (task of tasks; track $index) {
-  <app-task-card [task]="task" />
-  }
+  <div class="flex flex-col gap-6">
+    @for (task of tasks; track $index) {
+    <app-task-card [task]="task" />
+    }
+  </div>
+
   <div class="w-full mt-4">
     <app-button
       [buttonColor]="taskCategoryColor"

@@ -42,8 +42,8 @@ export class TaskService {
     },
     {
       id: 3,
-      title: 'Develop API for user authentication',
-      description: 'Implement authentication using JWT',
+      title: 'Implement User Profile Page',
+      description: 'Create a user profile page where users can view and update their personal information, such as name, email, and password.',
       priority: TaskPriority.Medium,
       taskComments: [],
       taskAttachmentsQuantity: 0,
@@ -53,14 +53,25 @@ export class TaskService {
     },
     {
       id: 4,
-      title: 'Develop API for user authentication',
-      description: 'Implement authentication using JWT',
+      title: 'Test API for user authentication',
+      description: 'Implement the testing with vitest for authentication using JWT',
       priority: TaskPriority.Medium,
       taskComments: [],
       taskAttachmentsQuantity: 0,
       date: new Date('2023-12-05'),
       isCompleted: false,
       taskCategory: TaskCategoryName.Testing,
+    },
+    {
+      id: 5,
+      title: 'Design Responsive Dashboard Layout',
+      description: 'Create a responsive dashboard layout for administrators, with sections for user management, analytics, and settings.',
+      priority: TaskPriority.Low,
+      taskComments: [],
+      taskAttachmentsQuantity: 4,
+      date: new Date('2023-12-05'),
+      isCompleted: true,
+      taskCategory: TaskCategoryName.Frontend,
     },
   ];
 
